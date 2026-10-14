@@ -1,0 +1,6 @@
+ticker,n days,ARIMA dir. accuracy %,Always-up baseline %,p-value (acc > 50%)
+NVDA,374,51.604,52.699,0.285
+AAPL,374,49.733,53.985,0.562
+JPM,388,51.546,56.443,0.288
+XOM,0,,55.928,
+JNJ,389,48.586,54.756,0.729

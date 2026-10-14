@@ -1,0 +1,16 @@
+ticker,model,order,RMSE,MAE,MAPE %
+NVDA,ARIMA walk-forward,"(1, 1, 0)",4.241,3.175,1.807
+NVDA,ARIMA multi-step,"(1, 1, 0)",71.586,65.276,34.258
+NVDA,Naive (t-1),"(1, 1, 0)",4.252,3.165,1.803
+AAPL,ARIMA walk-forward,"(1, 1, 0)",4.562,3.051,1.205
+AAPL,ARIMA multi-step,"(1, 1, 0)",64.528,52.759,18.651
+AAPL,Naive (t-1),"(1, 1, 0)",4.515,3.008,1.187
+JPM,ARIMA walk-forward,"(2, 1, 2)",4.257,3.147,1.075
+JPM,ARIMA multi-step,"(2, 1, 2)",86.711,80.267,26.009
+JPM,Naive (t-1),"(2, 1, 2)",4.203,3.059,1.046
+XOM,ARIMA walk-forward,"(0, 1, 0)",2.134,1.547,1.194
+XOM,ARIMA multi-step,"(0, 1, 0)",32.859,24.882,17.187
+XOM,Naive (t-1),"(0, 1, 0)",2.134,1.547,1.194
+JNJ,ARIMA walk-forward,"(1, 1, 4)",2.626,1.849,0.895
+JNJ,ARIMA multi-step,"(1, 1, 4)",62.241,50.029,21.812
+JNJ,Naive (t-1),"(1, 1, 4)",2.546,1.795,0.871
