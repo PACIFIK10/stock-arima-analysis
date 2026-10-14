@@ -8,9 +8,9 @@ The analysis uses daily adjusted close prices from January 2019 to October 2026.
 
 **Key findings**
 
-- ARIMA does not significantly beat the naive baseline on any of the five stocks. Differences for NVDA, AAPL, and JPM are not statistically significant (Diebold-Mariano p-values of 0.62, 0.15, and 0.15).
+- ARIMA does not significantly beat the naive baseline on any of the five stocks. For NVDA and AAPL the difference is not statistically significant (Diebold-Mariano p-values of 0.62 and 0.15).
 - For XOM, the selected model is ARIMA(0,1,0), which is the random-walk (naive) model itself, so the forecasts are identical.
-- For JNJ, the more complex ARIMA(1,1,4) is significantly worse than the naive baseline (p = 0.0002), a sign of overfitting.
+- For JNJ and JPM, the more complex models, ARIMA(1,1,4) and ARIMA(3,1,2), are significantly worse than the naive baseline (p = 0.0002 and 0.048), a sign of overfitting. The JPM result is borderline.
 - Directional accuracy is close to a coin flip (48.6% to 51.6%) and below a simple "always predict up" strategy on every stock with a defined result.
 - Multi-step forecasts degrade quickly: RMSE is roughly 14 to 24 times larger than one-step-ahead RMSE, and the forecast flattens into a near-constant line.
 - Ljung-Box tests reject white-noise residuals for four of five stocks, which points to remaining structure in volatility rather than in price direction.
@@ -25,7 +25,7 @@ Walk-forward (one-step-ahead) performance on the held-out test window. RMSE is i
 |---|---|---|---|---|---|---|---|
 | NVDA | (1,1,0) | 4.241 | 4.252 | 0.616 | No significant difference | 51.6% | 52.7% |
 | AAPL | (1,1,0) | 4.562 | 4.515 | 0.153 | No significant difference | 49.7% | 54.0% |
-| JPM | (2,1,2) | 4.257 | 4.203 | 0.155 | No significant difference | 51.5% | 56.4% |
+| JPM | (3,1,2) | 4.283 | 4.203 | 0.048 | Naive significantly better | 51.3% | 56.4% |
 | XOM | (0,1,0) | 2.134 | 2.134 | n/a | Identical forecasts | n/a | 55.9% |
 | JNJ | (1,1,4) | 2.626 | 2.546 | 0.0002 | Naive significantly better | 48.6% | 54.8% |
 
