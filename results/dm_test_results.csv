@@ -1,6 +1,6 @@
 ticker,DM stat,p-value,verdict
 NVDA,-0.5016,0.6162,no significant difference
 AAPL,1.4323,0.1528,no significant difference
-JPM,1.4256,0.1548,no significant difference
+JPM,1.9799,0.0484,Naive significantly better
 XOM,,,identical forecasts
 JNJ,3.7059,0.0002,Naive significantly better

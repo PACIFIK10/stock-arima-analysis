@@ -17,6 +17,30 @@ The analysis uses daily adjusted close prices from January 2019 to October 2026.
 
 These results are consistent with weak-form market efficiency: past prices carry little exploitable information for forecasting future price levels or direction.
 
+### Results Summary
+
+Walk-forward (one-step-ahead) performance on the held-out test window. RMSE is in dollars, so it is comparable only within a stock.
+
+| Stock | ARIMA order | ARIMA RMSE | Naive RMSE | Diebold-Mariano p-value | Verdict | ARIMA direction accuracy | "Always up" benchmark |
+|---|---|---|---|---|---|---|---|
+| NVDA | (1,1,0) | 4.241 | 4.252 | 0.616 | No significant difference | 51.6% | 52.7% |
+| AAPL | (1,1,0) | 4.562 | 4.515 | 0.153 | No significant difference | 49.7% | 54.0% |
+| JPM | (2,1,2) | 4.257 | 4.203 | 0.155 | No significant difference | 51.5% | 56.4% |
+| XOM | (0,1,0) | 2.134 | 2.134 | n/a | Identical forecasts | n/a | 55.9% |
+| JNJ | (1,1,4) | 2.626 | 2.546 | 0.0002 | Naive significantly better | 48.6% | 54.8% |
+
+XOM's selected model forecasts no change from the prior day, so it makes no up or down call and has no directional accuracy.
+
+### Results at a Glance
+
+![Normalized adjusted close prices for NVDA, AAPL, JPM, XOM, and JNJ, indexed to 100](images/normalized_prices.png)
+
+*Adjusted close prices indexed to 100 at the start of the sample, showing the five stocks' very different growth paths.*
+
+![ARIMA forecasts versus actual prices for each stock, with walk-forward and multi-step forecasts and 95% confidence bands](images/forecast_vs_actual.png)
+
+*Forecasts versus actual prices on the held-out test window. The walk-forward forecast (green) tracks the actual price closely because each day's forecast uses the prior day's value. The multi-step forecast (red dashed) flattens into a near-constant line, and its 95% band widens with the horizon.*
+
 ## Architecture
 
 The analysis is a single linear pipeline in one Jupyter notebook, `stock_arima_analysis.ipynb`.
@@ -39,6 +63,7 @@ The analysis is a single linear pipeline in one Jupyter notebook, `stock_arima_a
 | Path | Description |
 |---|---|
 | `stock_arima_analysis.ipynb` | Full analysis with code, charts, and outputs |
+| `images/` | Charts displayed in this README |
 | `results/model_results.csv` | RMSE, MAE, and MAPE for every stock and model |
 | `results/dm_test_results.csv` | Diebold-Mariano test results |
 | `results/directional_accuracy.csv` | Directional accuracy results |

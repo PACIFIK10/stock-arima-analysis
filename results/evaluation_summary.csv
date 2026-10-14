@@ -1,6 +1,6 @@
 ticker,DM stat,p-value,verdict,n days,ARIMA dir. accuracy %,Always-up baseline %,p-value (acc > 50%)
 NVDA,-0.5016,0.6162,no significant difference,374,51.604,52.699,0.285
 AAPL,1.4323,0.1528,no significant difference,374,49.733,53.985,0.562
-JPM,1.4256,0.1548,no significant difference,388,51.546,56.443,0.288
+JPM,1.9799,0.0484,Naive significantly better,388,51.289,56.443,0.324
 XOM,,,identical forecasts,0,,55.928,
 JNJ,3.7059,0.0002,Naive significantly better,389,48.586,54.756,0.729
